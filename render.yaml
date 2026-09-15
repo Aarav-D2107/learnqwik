@@ -1,0 +1,65 @@
+# =============================================================
+# LearnQwik — Render blueprint for the FastAPI backend.
+#
+# Deploy: Render dashboard -> New -> Blueprint -> point at this repo.
+# Then set the secret values (marked sync:false) in the dashboard.
+# =============================================================
+services:
+  - type: web
+    name: learnqwik-api
+    runtime: python
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    # Must bind 0.0.0.0 and use Render's $PORT.
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+
+      - key: ENVIRONMENT
+        value: production
+
+      # ---------- Secrets: set these in the Render dashboard ----------
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: AI_API_KEY
+        sync: false
+
+      # ---------- The exact origin of your Vercel frontend ----------
+      # No trailing slash. CORS will reject anything else.
+      - key: FRONTEND_URL
+        sync: false
+      - key: EXTRA_CORS_ORIGINS
+        sync: false
+
+      # ---------- Non-secret configuration ----------
+      - key: AI_PROVIDER
+        value: anthropic
+      - key: TEXT_MODEL
+        value: claude-sonnet-4-6
+      - key: VISION_MODEL
+        value: claude-sonnet-4-6
+      - key: STORAGE_BUCKET
+        value: learnqwik-documents
+      - key: MAX_UPLOAD_SIZE_MB
+        value: "20"
+      - key: MAX_FULLSCREEN_VIOLATIONS
+        value: "3"
+      - key: SECONDS_PER_QUESTION
+        value: "60"
+      - key: MAX_VISION_PAGES
+        value: "12"
+      - key: USE_EMBEDDINGS
+        value: "false"
+      - key: RATE_LIMIT_AI_PER_MINUTE
+        value: "20"
+      - key: RATE_LIMIT_UPLOAD_PER_HOUR
+        value: "30"
