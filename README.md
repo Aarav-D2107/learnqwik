@@ -1,6 +1,6 @@
 # LearnQwik
 
-**Learn what you don't know you don't know.**
+**Learn what you need, Improve what you don't.**
 
 LearnQwik measures what a student actually knows, works out the specific gap,
 teaches that gap, and then proves — with a number — that it closed.
