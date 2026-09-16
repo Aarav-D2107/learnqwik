@@ -5,7 +5,14 @@ Every tunable constant lives here and is overridable with an environment
 variable. Nothing in this module imports third-party packages, so it can be
 imported by the pure-logic services and by the offline self-check.
 """
+import truststore
+truststore.inject_into_ssl()
+
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
+
 
 
 def _f(name: str, default: float) -> float:

@@ -327,9 +327,10 @@ async function viewLanding(showLoading) {
 
   return `
   <section class="hero wrap">
-    <div class="hero-kicker"><span class="dot"></span> QUALITY EDUCATION TRACK · HACKATHON BUILD</div>
-    <h1>Learn what you don't<br/>know you don't know.</h1>
+    <div class="hero-kicker"><span class="dot"></span> AI TUTOR · SMART ASSESSMENTS · PERSONALIZED ROADMAPS</div>
+    <h1>Learn what you need<br/>Improve what you don't.</h1>
     <p class="hero-sub">LearnQwik assesses your knowledge, diagnoses the gaps, teaches you the exact concept you're missing, and proves — with numbers — that you improved.</p>
+    <div class="hero-kicker"><span class="dot"></span> PERSONALIZED EDUCATION · BUILT AROUND YOU</div>
     <div class="hero-cta">
       <button class="btn btn-primary" onclick="nav('${Auth.isSignedIn() ? "#/subjects" : "#/auth/signup"}')">Start Your Journey</button>
       <button class="btn btn-secondary" onclick="nav('#/subjects')">Explore Subjects</button>

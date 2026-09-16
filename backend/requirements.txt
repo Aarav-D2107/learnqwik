@@ -5,6 +5,7 @@ pydantic==2.10.4
 email-validator==2.2.0
 python-multipart==0.0.20
 httpx==0.28.1
+truststore==0.10.4
 
 # Document intelligence
 PyMuPDF==1.25.1          # PDF text extraction + page rasterization for Vision

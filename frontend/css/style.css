@@ -182,7 +182,7 @@ p { line-height: 1.65; color: var(--text-dim); margin: 0 0 12px; }
 .btn-block { width: 100%; }
 
 /* ---------- Hero ---------- */
-.hero { padding: 108px 0 80px; position: relative; }
+.hero { padding: 40px 0 80px; position: relative; }
 .hero-kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em;
